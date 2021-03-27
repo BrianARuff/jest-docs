@@ -4,5 +4,8 @@
   },
   "scripts": {
     "test": "jest -w"
+  },
+  "dependencies": {
+    "fetch": "^1.1.0"
   }
 }

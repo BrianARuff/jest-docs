@@ -1,3 +1,4 @@
+const { test, expect } = require("@jest/globals");
 const sum = require("./sum");
 
 test("adds 1 + 2 to equal 3", () => {
@@ -20,4 +21,24 @@ test("adding positive numbers is not zero", () => {
       expect(a + b).not.toBe(0);
     }
   }
+});
+
+// truthiness
+
+test("null", () => {
+  const n = null;
+  expect(n).toBeNull();
+  expect(n).toBeDefined();
+  expect(n).not.toBeUndefined();
+  expect(n).not.toBeTruthy();
+  expect(n).toBeFalsy(); // very useful!
+});
+
+test("zero", () => {
+  const z = 0;
+  expect(z).not.toBeNull();
+  expect(z).toBeDefined();
+  expect(z).not.toBeUndefined();
+  expect(z).not.toBeTruthy();
+  expect(1).not.toBeFalsy();
 });

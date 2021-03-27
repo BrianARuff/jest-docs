@@ -87,3 +87,18 @@ test("the shopping list has beer on it", () => {
   expect(shoppingList).toContain("beer");
   expect(new Set(shoppingList)).toContain("beer");
 });
+
+// execptions
+
+// use toThrow to see if a function throws an error
+
+function compileAdroidCode() {
+  throw new Error("you are using the wrong JDK");
+}
+
+test("compiling android goes as expected", () => {
+  expect(() => compileAdroidCode()).toThrow();
+  expect(() => compileAdroidCode()).toThrowError(Error);
+  expect(() => compileAdroidCode()).toThrow("you are using the wrong JDK");
+  expect(() => compileAdroidCode()).toThrowError(/JDK/);
+});
